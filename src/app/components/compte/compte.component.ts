@@ -20,8 +20,8 @@ export class CompteComponent implements OnInit {
 
   submitToBack() {
     console.log(this.usr);
-    // this.compteService.postCompte(this.usr)
-    // .subscribe(res => console.log(res));
+    this.compteService.postCompte(this.usr)
+    .subscribe(res => console.log(res));
   }
 
   ngOnInit() {
