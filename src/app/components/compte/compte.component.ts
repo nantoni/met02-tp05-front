@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { User } from '../../../../shared/models/user';
 
@@ -20,6 +19,10 @@ export class CompteComponent implements OnInit {
 
   submitToBack() {
     console.log(this.usr);
+
+    this.compteService.login("aaaa", "nnnn")
+    .subscribe(res => console.log(res));
+
     this.compteService.postCompte(this.usr)
     .subscribe(res => console.log(res));
   }

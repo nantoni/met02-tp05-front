@@ -1,12 +1,19 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" [routerLink]="['/']">La bonne gourde</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-    </ul>
+    <ul class="navbar-nav mr-auto"></ul>
     <ul class="nav navbar-nav navbar-right">
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/']">Accueil</a>
@@ -14,11 +21,27 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/catalogue']">Catalogue</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/compte']">Compte</a>
-      </li>
+
       <li class="nav-item active">
-        <a class="nav-link" [routerLink]="['/panier']">Panier <span *ngIf="compteurPanier > 0" class="badge badge-warning">{{compteurPanier}}</span></a>
+          <a class="nav-link" [routerLink]="['/panier']"
+            >Panier
+            <span *ngIf="compteurPanier > 0" class="badge badge-warning">{{
+              compteurPanier
+            }}</span></a
+          >
+        </li>
+
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/compte']">Signup</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/connexion']">Signin</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">User:</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Signout</a>
       </li>
     </ul>
   </div>

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { User } from '../../shared/models/user';
 
 
@@ -13,18 +13,28 @@ export class CompteService {
 
   httpOptions = {
     headers: new HttpHeaders({
-    'Content-Type': 'application/x-www-form-urlencoded'
-  })
-}
+      'Content-Type': 'application/x-www-form-urlencoded'
+    })
+  }
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  
 
-  public postCompte (user: User) : Observable<User> {
+
+  public postCompte(user: User): Observable<User> {
     console.log(user);
     return this.http.post<User>(environment.apiUrl + '/api/client', user, this.httpOptions);
   }
 
+  public login(username: string, password: string): Observable<any> {
+    const body = new HttpParams()
+      .set('username', username)
+      .set('password', password);
+  
+    return this.http.post(environment.apiUrl + '/api/client',
+      body.toString(),
+      this.httpOptions
+    );
+  }
 
 }

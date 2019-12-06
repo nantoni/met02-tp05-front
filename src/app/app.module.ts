@@ -14,11 +14,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { CompteService } from './compte.service';
 
 
-
-//const appRoutes: Routes = [
-//{ path: 'detail/:produit', component: DetailComponent },
-//];
-
 const appRoutes: Routes = [
   {
     path: "",
