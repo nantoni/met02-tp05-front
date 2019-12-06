@@ -15,14 +15,14 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto"></ul>
     <ul class="nav navbar-nav navbar-right">
-      <li class="nav-item">
+      <li *ngIf="authenticationService.isAuth" class="nav-item">
         <a class="nav-link" [routerLink]="['/']">Accueil</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="authenticationService.isAuth" class="nav-item">
         <a class="nav-link" [routerLink]="['/catalogue']">Catalogue</a>
       </li>
 
-      <li class="nav-item active">
+      <li *ngIf="authenticationService.isAuth" class="nav-item active">
           <a class="nav-link" [routerLink]="['/panier']"
             >Panier
             <span *ngIf="compteurPanier > 0" class="badge badge-warning">{{
@@ -31,17 +31,17 @@
           >
         </li>
 
-      <li class="nav-item">
+      <li *ngIf="!authenticationService.isAuth" class="nav-item">
         <a class="nav-link" [routerLink]="['/compte']">Signup</a>
       </li>
-      <li class="nav-item">
+      <li *ngIf="!authenticationService.isAuth" class="nav-item">
         <a class="nav-link" [routerLink]="['/connexion']">Signin</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link">User:</a>
+      <li *ngIf="authenticationService.isAuth" class="nav-item">
+        <a class="nav-link">User: {{authenticationService.currentUser}}</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link">Signout</a>
+      <li *ngIf="authenticationService.isAuth" class="nav-item">
+        <a class="nav-link" (click)="authenticationService.logout()">Signout</a>
       </li>
     </ul>
   </div>

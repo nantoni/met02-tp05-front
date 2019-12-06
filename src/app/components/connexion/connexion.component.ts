@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthenticationService } from 'src/app/authentication.service';
 
 @Component({
   selector: 'app-connexion',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConnexionComponent implements OnInit {
 
-  constructor() { }
+  mail: string = "";
+  password: string = "";
+
+  constructor(private authenticationService: AuthenticationService) { }
 
   ngOnInit() {
+  }
+
+  signin() {
+    this.authenticationService.login(this.mail, this.password);
   }
 
 }
