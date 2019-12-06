@@ -38,7 +38,7 @@
         <a class="nav-link" [routerLink]="['/connexion']">Signin</a>
       </li>
       <li *ngIf="authenticationService.isAuth" class="nav-item">
-        <a class="nav-link">User: {{authenticationService.currentUser}}</a>
+        <a class="nav-link">User: {{authenticationService.currentUserValue.first_name}}</a>
       </li>
       <li *ngIf="authenticationService.isAuth" class="nav-item">
         <a class="nav-link" (click)="authenticationService.logout()">Signout</a>

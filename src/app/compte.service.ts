@@ -19,22 +19,9 @@ export class CompteService {
 
   constructor(private http: HttpClient) { }
 
-
-
   public postCompte(user: User): Observable<User> {
     console.log(user);
     return this.http.post<User>(environment.apiUrl + '/api/client', user, this.httpOptions);
-  }
-
-  public login(username: string, password: string): Observable<any> {
-    const body = new HttpParams()
-      .set('username', username)
-      .set('password', password);
-  
-    return this.http.post(environment.apiUrl + '/api/client',
-      body.toString(),
-      this.httpOptions
-    );
   }
 
 }

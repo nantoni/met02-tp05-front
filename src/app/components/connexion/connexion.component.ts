@@ -17,7 +17,8 @@ export class ConnexionComponent implements OnInit {
   }
 
   signin() {
-    this.authenticationService.login(this.mail, this.password);
+    this.authenticationService.signin(this.mail, this.password)
+    .subscribe(res => console.log(res));
   }
 
 }

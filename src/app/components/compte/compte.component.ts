@@ -18,11 +18,6 @@ export class CompteComponent implements OnInit {
   constructor(private compteService: CompteService) { }
 
   submitToBack() {
-    console.log(this.usr);
-
-    this.compteService.login("aaaa", "nnnn")
-    .subscribe(res => console.log(res));
-
     this.compteService.postCompte(this.usr)
     .subscribe(res => console.log(res));
   }
